@@ -3,7 +3,7 @@
  * Centralized API communication with the backend
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://16.16.68.123:5000/api';
 
 /**
  * Generic fetch wrapper for API calls
