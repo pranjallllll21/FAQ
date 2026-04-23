@@ -5,18 +5,15 @@
  * Run with: node seed.js
  */
 
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const FAQ = require('./models/FAQ');
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import FAQ from './models/FAQ.js';
 
 dotenv.config();
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/smart-faq', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/smart-faq');
     console.log('✅ Connected to MongoDB');
   } catch (error) {
     console.error('❌ Error connecting to MongoDB:', error);
