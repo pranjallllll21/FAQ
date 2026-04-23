@@ -21,7 +21,11 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+// Configure CORS from environment (safer for production)
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || '*',
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
