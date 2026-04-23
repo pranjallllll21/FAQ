@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force dark mode only */
+html {
+  color-scheme: dark;
+}
+
+html.dark,
+html {
+  @apply bg-[#0a0a0a] text-white;
+}
+
+/* Remove light mode */
+html:not(.dark) {
+  @apply bg-[#0a0a0a] text-white;
+}
+
+* {
+  @apply transition-colors duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#0a0a0a] text-white;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Premium Glassmorphism */
+.glassmorphism {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.glassmorphism:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Glow Button */
+.glow-button {
+  @apply relative px-6 py-3 font-semibold rounded-xl transition-all duration-300;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.glow-button:hover {
+  @apply shadow-glow-lg;
+  transform: translateY(-2px);
+}
+
+.glow-button:active {
+  transform: translateY(0);
+}
+
+/* Glow Card */
+.glow-card {
+  @apply relative rounded-2xl p-4 border border-primary-600/50;
+  background: rgba(26, 26, 46, 0.6);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.05);
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.5), inset 0 0 20px rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.7);
+}
+
+/* Neon Text */
+.neon-text {
+  color: #a855f7;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6), 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#1a1a2e];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-600 rounded-full hover:bg-primary-500;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  @apply ring-2 ring-primary-500 outline-none border-primary-500;
+}
+
+/* Typing dots animation */
+.typing-dots::after {
+  content: '';
+  animation: typing 1.4s infinite;
+}
+
+/* Smooth scale animation for cards */
+.card-hover {
+  @apply transition-transform duration-300;
+}
+
+.card-hover:hover {
+  @apply scale-105;
+}
